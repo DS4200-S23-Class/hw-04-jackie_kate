@@ -1,0 +1,29 @@
+body {
+	font-family: Arial;
+}
+
+.center {
+	text-align: center;
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+#col1 {
+	flex: 60%;
+}
+
+#col2 {
+	flex: 40%;
+}
+
+#frame {
+	width: 300px;
+	height: 300px;
+	border-bottom: 5px solid black;
+	border-left: 5px solid black;
+	margin: 100px;
+}

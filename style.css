@@ -12,6 +12,19 @@ body {
 	align-items: center;
 }
 
+.circle {
+	fill: lightblue;
+}
+
+.highlight {
+	fill: blue;
+}
+
+.border {
+	stroke: pink;
+	stroke-width: 5px;
+}
+
 #col1 {
 	flex: 60%;
 }

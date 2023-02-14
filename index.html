@@ -13,23 +13,27 @@
     <h1 class="center">hw-04: Event Handling</h1>
     <div class="container">
         <div id="col1">
+            <!-- add scatterplot -->
             <svg id="frame">
 
-                <circle cx="30" cy="240" r="10"/>
-                <circle cx="60" cy="180" r="10"/>
-                <circle cx="180" cy="240" r="10"/>
-                <circle cx="270" cy="30" r="10"/>
+                <circle class="circle" cx="30" cy="240" r="10"/>
+                <circle class="circle" cx="60" cy="180" r="10"/>
+                <circle class="circle" cx="180" cy="240" r="10"/>
+                <circle class="circle" cx="270" cy="30" r="10"/>
+                <circle class="circle" id="user-point"/>
 
             </svg>
 
         </div>
         <div id="col2">
-            
+            <input type="text" id="xcoord">
+            <input type="text" id="ycoord">
+            <button type="button" id="subButton">Submit</button>
 
         </div>
     </div>
 
-
+<script src="main.js"></script>
 </body>
 
 </html>

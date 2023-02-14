@@ -16,22 +16,58 @@
             <!-- add scatterplot -->
             <svg id="frame">
 
-                <circle class="circle" cx="30" cy="240" r="10"/>
-                <circle class="circle" cx="60" cy="180" r="10"/>
-                <circle class="circle" cx="180" cy="240" r="10"/>
-                <circle class="circle" cx="270" cy="30" r="10"/>
-                <circle class="circle" id="user-point"/>
+                <circle name="(1,2)" class="circle" cx="30" cy="240" r="10"/>
+                <circle name="(2,4)" class="circle" cx="60" cy="180" r="10"/>
+                <circle name="(6,2)" class="circle" cx="180" cy="240" r="10"/>
+                <circle name="(9,9)" class="circle" cx="270" cy="30" r="10"/>
 
             </svg>
 
         </div>
         <div id="col2">
-            <input type="text" id="xcoord">
-            <input type="text" id="ycoord">
+
+        <p id="coords"></p>
+        <div id="xdiv">
+
+        <h4>x-coordinate</h4>
+            <select id="xcoord">
+
+                <option value = "1">1</option>
+                <option value = "2">2</option>
+                <option value = "3">3</option>
+                <option value = "4">4</option>
+                <option value = "5">5</option>
+                <option value = "6">6</option>
+                <option value = "7">7</option>
+                <option value = "8">8</option>
+                <option value = "9">9</option>
+            </select>
+        </div>
+
+        <div id="ydiv">
+        <h4>y-coordinate</h4>
+            <select id="ycoord">
+                <option value = "1">1</option>
+                <option value = "2">2</option>
+                <option value = "3">3</option>
+                <option value = "4">4</option>
+                <option value = "5">5</option>
+                <option value = "6">6</option>
+                <option value = "7">7</option>
+                <option value = "8">8</option>
+                <option value = "9">9</option>
+            </select>
+        </div>
+
             <button type="button" id="subButton">Submit</button>
 
         </div>
     </div>
+
+    <h2 class="center">Acknowledgements</h2>
+    <p class = "center">https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttributeNS</p>
+    <p class = "center">https://stackoverflow.com/questions/22894540/creating-circles-with-svg-and-javascript</p>
+
 
 <script src="main.js"></script>
 </body>

@@ -18,32 +18,40 @@ function onClick() {
 	if (!(this.className.baseVal.includes("border"))) {
 		this.classList.add("border");
 
-		let cx = this.getAttribute("cx");
-		let cy = this.getAttribute("cy");
-		coords.push("(" + cx + "," + cy + ")");
+		let coordinate = this.getAttribute("name");
+		coords.push(coordinate);
 	}
 
 	// if unclicked, remove border and coord from display list
 	else {
 		this.classList.remove("border");
 
-		let cx = this.getAttribute("cx");
-		let cy = this.getAttribute("cy");
-		coords.pop("(" + cx + "," + cy + ")");
+		let coordinate = this.getAttribute("name");
+		coords.pop(coordinate);
 	}
 
 	// display current coords
-	document.getElementById("col2").innerHTML += coords;
-
+	document.getElementById("coords").innerHTML = coords;
 }
 
 function addPoint() {
 
 	let xCoord = document.getElementById("xcoord").value;
 	let yCoord = document.getElementById("ycoord").value;
-	document.getElementById("user-point").cx = xCoord;
-	document.getElementById("user-point").cy = yCoord;
+	let circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
 
+
+	circle.setAttributeNS(null, 'cx', xCoord * 30);
+	circle.setAttributeNS(null, 'cy', 300 - yCoord * 30);
+	circle.setAttributeNS(null, 'r', 10);
+	circle.setAttributeNS(null, 'name', "(" + xCoord + "," + yCoord + ")");
+	circle.classList.add('circle');
+
+	document.getElementById('frame').appendChild(circle);
+
+circle.addEventListener('mouseover', mouseOver);
+circle.addEventListener('mouseout', mouseOut);
+circle.addEventListener('click', onClick);
 }
 
 let points = document.getElementsByClassName("circle");
@@ -59,6 +67,10 @@ for (let i = 0; i < points.length; i ++) {
 }
 
 document.getElementById("subButton").addEventListener('click', addPoint);
+document.getElementById("newPoint").addEventListener('mouseover', mouseOver);
+document.getElementById("newPoint").addEventListener('mouseout', mouseOut);
+document.getElementById("newPoint").addEventListener('click', onClick);
+
 
 
 

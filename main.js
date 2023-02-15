@@ -35,12 +35,15 @@ function onClick() {
 }
 
 function addPoint() {
-
+	
+	// get user input
 	let xCoord = document.getElementById("xcoord").value;
 	let yCoord = document.getElementById("ycoord").value;
+	
+	// create new point
 	let circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
 
-
+	// set attributes to match input
 	circle.setAttributeNS(null, 'cx', xCoord * 30);
 	circle.setAttributeNS(null, 'cy', 300 - yCoord * 30);
 	circle.setAttributeNS(null, 'r', 10);
@@ -48,20 +51,22 @@ function addPoint() {
 	circle.classList.add('circle');
 
 	document.getElementById('frame').appendChild(circle);
-
-circle.addEventListener('mouseover', mouseOver);
-circle.addEventListener('mouseout', mouseOut);
-circle.addEventListener('click', onClick);
+	
+	// add functionality to match other points
+	circle.addEventListener('mouseover', mouseOver);
+	circle.addEventListener('mouseout', mouseOut);
+	circle.addEventListener('click', onClick);
 }
 
 let points = document.getElementsByClassName("circle");
 
-// check which point has been hovered over
+// add hover listener to each point
 for (let i = 0; i < points.length; i ++) {
 	points[i].addEventListener('mouseover', mouseOver);
 	points[i].addEventListener('mouseout', mouseOut);
 }
 
+// add click listener to each point
 for (let i = 0; i < points.length; i ++) {
 	points[i].addEventListener('click', onClick);
 }
